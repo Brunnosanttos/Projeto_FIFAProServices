@@ -108,3 +108,6 @@
           </li>
         </ul>            
     </footer>
+    <script src="mobile-navbar.js"></script>
+  </body>
+</html>
