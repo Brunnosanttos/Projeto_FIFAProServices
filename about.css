@@ -6,9 +6,27 @@ body {
 }
 
 header {
+  display: flex;
   background-color: #0c0c0ce8;
   color: #fff;
   padding: 20px;
+  justify-content: end;
+}
+
+header h1 {
+  margin-right: 10vw;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background-color: white;
+  margin: 8px;
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
 }
 
 header nav ul {
@@ -398,6 +416,46 @@ header h1 {
 nav ul {
     flex-direction: column;
     align-items: center;
+}
+
+.nav-list {
+  position: absolute;
+  top: 8vh;
+  right: 0;
+  width: 50vw;
+  height: 93vh;
+  background-color: #0c0c0ce8;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in;
+  gap: 5vh;
+}
+
+.nav-list li {
+  margin-left: 0;
+  opacity: 0;
+}
+
+.mobile-menu {
+  display: block;
+}
+
+.nav-list.active {
+  transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 header nav ul li {

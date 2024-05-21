@@ -1,4 +1,3 @@
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,9 +6,27 @@ body {
 }
 
 header {
+  display: flex;
   background-color: #0c0c0ce8;
   color: #fff;
   padding: 20px;
+  justify-content: end;
+}
+
+header h1 {
+  margin-right: 10vw;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background-color: white;
+  margin: 8px;
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
 }
 
 header nav ul {
@@ -343,6 +360,46 @@ footer {
       align-items: center;
   }
 
+  .nav-list {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 50vw;
+    height: 93vh;
+    background-color: #0c0c0ce8;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    z-index: 9999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    gap: 5vh;
+  }
+
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .nav-list.active {
+    transform: translateX(0);
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   header nav ul li {
     margin-top: 0;
     margin-right: 0;
@@ -387,35 +444,3 @@ footer {
   }
 }
 
-@media (max-width: 480px) {
-  nav ul li {
-      margin: 5px 0;
-  }
-
-  header nav ul li {
-    margin-right: 0;
-    margin-bottom: 1vh;
-  }
-
-  .card2 {
-      width: calc(100% - 20px);
-      display: contents;
-  }
-
-  .container {
-      padding: 10px;
-  }
-
-  button.prev-btn, button.next-btn {
-      padding: 2px;
-  }
-
-  .card-content p {
-      font-size: 12px;
-      margin-bottom: 2vh;
-  }
-
-  .card-content h2 {
-      font-size: 14px;
-  }
-}
