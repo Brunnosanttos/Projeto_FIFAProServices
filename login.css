@@ -104,12 +104,36 @@ header nav ul li a button:active::after {
   transform: translate(0, 5%);
 }
 
+.textoH1 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 5vh;
+  color: white;
+}
+
+.textoH1 h1 {
+  width: 80%;
+}
+
+.textoP {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 2vh;
+  color: white;
+}
+
+.textoP p {
+  width: 80%;
+}
 
 .login-container {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 10vh;
+    margin-top: 13vh;
+    margin-bottom: 14vh;
 }
 
 .container-container {

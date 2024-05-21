@@ -15,7 +15,7 @@
         {
             unset($_SESSION['email']);
             unset($_SESSION['pswd']);
-            header('Location: login.php');
+            header('Location: login.php');  
         }
         else
         {

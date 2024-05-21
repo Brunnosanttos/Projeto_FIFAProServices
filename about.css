@@ -423,7 +423,7 @@ nav ul {
   top: 8vh;
   right: 0;
   width: 50vw;
-  height: 93vh;
+  height: 100%;
   background-color: #0c0c0ce8;
   flex-direction: column;
   align-items: center;
@@ -461,6 +461,16 @@ nav ul {
 header nav ul li {
   margin-right: 0;
   margin-bottom: 1vh;
+}
+
+.container p {
+  margin-top: 5vh;
+  font-size: 18px;
+}
+
+.card-container {
+  margin-top: 11vh;
+  margin-bottom: 11vh;
 }
 
 .card {
