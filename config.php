@@ -1,6 +1,6 @@
 <?php
 
-    $dbHost = 'Localhost';
+    $dbHost = 'mysql://root:hkojUBzSvbdttLOJCrSZazACRpNdMhTX@mysql.railway.internal:3306/railway';
     $dbUsername = 'root';
     $dbPassword = '';
     $dbName = 'form-fifa';
