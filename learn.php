@@ -17,6 +17,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIFAProServices</title>
     <link rel="stylesheet" href="learn.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+
+        // Verifica se a condição para o toast ser disparado é verdadeira
+        Toast.fire({
+            icon: "success",
+            title: "Login efetuado com sucesso!"
+        });
+    });
+</script>
 </head>
 <body>
 <header>
