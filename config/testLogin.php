@@ -3,7 +3,7 @@
 
     if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['pswd']))
     {
-        include_once('../config.php');
+        include_once('config.php');
         $email = $_POST['email'];
         $senha = $_POST['pswd'];
 
@@ -26,7 +26,7 @@
             $_SESSION['email'] = $email;
             $_SESSION['pswd'] = $senha;
             $_SESSION['login_sucess'] = true;
-            header('Location: ../src/learn.php?login=sucess');
+            header('Location: ../learn.php?login=sucess');
             exit;
         }
  

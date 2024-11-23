@@ -19,10 +19,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIFAProServices</title>
-    <link rel="stylesheet" href="../css/learn.css">
+    <link rel="stylesheet" href="css/learn.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../js/scripts.js" defer></script>
+    <script src="js/scripts.js" defer></script>
 </head>
 <body data-login="<?php echo $login_success ? 'success' : ''; ?>">
   <?php include 'header.php' ?>
@@ -93,6 +93,6 @@
         </table>
     </div>        
     <?php include 'footer.php'; ?>
-    <script src="../js/mobile-navbar.js"></script>
+    <script src="js/mobile-navbar.js"></script>
 </body>
 </html>

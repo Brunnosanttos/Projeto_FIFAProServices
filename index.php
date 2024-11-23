@@ -11,7 +11,7 @@ session_start();
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-  <?php include 'src/header.php' ?>
+  <?php include 'header.php' ?>
     <div class="container">
         <h1>Do que se trata?</h1>
         <p>Imagine dominar o campo virtual com habilidades aprimoradas, derrotar adversários formidáveis e deixar sua marca como uma lenda do futebol virtual. Na FIFAProServices, nós transformamos esses sonhos em realidade.
@@ -98,7 +98,7 @@ session_start();
             </div>
         </section>
     </div>
-    <?php include 'src/footer.php'; ?>
+    <?php include 'footer.php'; ?>
     <script src="js/scripts.js"></script>
     <script src="js/mobile-navbar.js"></script>
 </body>

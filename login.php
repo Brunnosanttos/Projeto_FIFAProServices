@@ -2,7 +2,7 @@
 
   if(isset($_POST['submit']))
   {
-    include_once('../config.php');
+    include_once('config/config.php');
 
     $nome = $_POST['nome'];
     $email = $_POST['email'];
@@ -19,7 +19,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIFAProServices</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
   <?php include 'header.php' ?>
@@ -33,7 +33,7 @@
         <div class="main">  	
                 <input type="checkbox" id="chk" aria-hidden="true">
                     <div class="login">
-                        <form class="form-login" action="../config/testLogin.php" method="POST">
+                        <form class="form-login" action="config/testLogin.php" method="POST">
                             <label for="chk" aria-hidden="true">Login</label>
                             <input class="input-login" value="bruno@gmail.com" type="email" name="email" placeholder="Email" required>
                             <input class="input-login" type="password" name="pswd" placeholder="Senha" required>
@@ -53,6 +53,6 @@
             </div>
     </div>
     <?php include 'footer.php'; ?>
-    <script src="../js/mobile-navbar.js"></script>
+    <script src="js/mobile-navbar.js"></script>
   </body>
 </html>

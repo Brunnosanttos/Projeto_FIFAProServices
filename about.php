@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIFAProServices</title>
-    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
   <?php include 'header.php' ?>
@@ -20,7 +20,7 @@ session_start();
         <div class="card">
             <div class="card-border-top">
             </div>
-            <div class="img"> <img src="../assets/eu.jpg" alt="criador">
+            <div class="img"> <img src="assets/eu.jpg" alt="criador">
             </div>
             <span> Bruno Santos</span>
             <p class="job"> Membro da equipe de players e desenvolvedor do site</p>
@@ -45,6 +45,6 @@ session_start();
             </div>
         </div>
         <?php include 'footer.php'; ?>
-        <script src="../js/mobile-navbar.js"></script>
+        <script src="js/mobile-navbar.js"></script>
 </body>
 </html>
