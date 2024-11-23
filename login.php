@@ -30,7 +30,7 @@
                     <div class="login">
                         <form class="form-login" action="config/testLogin.php" method="POST">
                             <label for="chk" aria-hidden="true">Login</label>
-                            <input class="input-login" value="bruno@gmail.com" type="email" name="email" placeholder="Email" required>
+                            <input class="input-login" type="email" name="email" placeholder="Email" required>
                             <input class="input-login" type="password" name="pswd" placeholder="Senha" required>
                             <button type="submit" name="submit" id="submit">Login</button>
                         </form>
