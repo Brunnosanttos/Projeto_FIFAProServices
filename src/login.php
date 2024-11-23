@@ -2,7 +2,7 @@
 
   if(isset($_POST['submit']))
   {
-    include_once('../config/config.php');
+    include_once('../config.php');
 
     $nome = $_POST['nome'];
     $email = $_POST['email'];
