@@ -1,76 +1,4 @@
-<?php
-
-  if(isset($_POST['submit']))
-  {
-    include_once('config.php');
-
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-
-    $result = mysqli_query($conexao, "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')");
-  }
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FIFAProServices</title>
-    <link rel="stylesheet" href="login.css">
-</head>
-<body>
-  <header>
-        <h1>FIFAProServices</h1>
-        <div class="mobile-menu">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-        <nav>
-          <ul class="nav-list">
-            <li><a href="index.php"><button type="button">Início</button></a></li>
-            <li><a href="about.php"><button type="button">Sobre nós</button></a></li>
-            <li><a href="learn.php"><button type="button">Aprenda e domine</button></a></li>
-            <li><a href="login.php"><button type="button">Cadastro/Login</button></a></li>
-            <?php if(isset($_SESSION['email'])): ?>
-                <li><a href="sair.php"><button type="button">Sair</button></a></li>
-            <?php endif; ?>
-        </ul>   
-        </nav>
-    </header>
-    <div class="textoH1">
-      <h1>Crie uma conta</h1>
-    </div>
-    <div class="textoP">
-      <p>Faça o login e tenha acesso às melhores dicas e dribles do EA FC 24 e aprimore todo seu conhecimento no fifinha</p>
-    </div>
-    <div class="login-container">
-        <div class="main">  	
-                <input type="checkbox" id="chk" aria-hidden="true">
-                    <div class="login">
-                        <form class="form-login" action="testLogin.php" method="POST">
-                            <label for="chk" aria-hidden="true">Login</label>
-                            <input class="input-login" type="email" name="email" placeholder="Email" required>
-                            <input class="input-login" type="password" name="pswd" placeholder="Senha" required>
-                            <button type="submit" name="submit" id="submit">Login</button>
-                        </form>
-                    </div>
-
-            <div class="register">
-                        <form class="form-register" action="login.php" method="POST">
-                            <label for="chk" aria-hidden="true">Cadastro</label>
-                            <input class="input-register" type="text" name="nome" placeholder="Nome do usuário" required>
-                            <input class="input-register" type="email" name="email" placeholder="Email" required>
-                            <input class="input-register" type="password" name="senha" placeholder="Senha" required>
-                            <button type="submit" name="submit" id="submit">Cadastrar</button>
-                        </form>
-                    </div>
-            </div>
-    </div>
-    <footer>
+<footer>
             <p>&copy; 2024 FIFAProServices</p>
             <ul class="wrapper">
               <a href="https://www.facebook.com/bruno.santos.3114935" target="_blank" rel="noopener noreferrer"><li class="icon facebook">
@@ -117,6 +45,3 @@
               </li></a>
             </ul>            
         </footer>
-    <script src="mobile-navbar.js"></script>
-  </body>
-</html>
