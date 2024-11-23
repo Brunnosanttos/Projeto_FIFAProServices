@@ -18,12 +18,12 @@ session_start();
         </p>
         <section id="carrossel">
             <div class="carousel">
+                <button class="prev-btn">&lt;</button>
                 <div class="carousel-images">
                     <img src="assets/capaeafc.webp" alt="Imagem1">
                     <img src="assets/apenaspc.png" alt="Imagem2">
                     <img src="assets/haalandcapa.jpeg" alt="Imagem3">
                 </div>
-                <button class="prev-btn">&lt;</button>
                 <button class="next-btn">&gt;</button>
             </div>            
         </section>

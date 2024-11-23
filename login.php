@@ -1,16 +1,7 @@
 <?php
 
-  if(isset($_POST['submit']))
-  {
-    include_once('config/config.php');
-
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-
-    $result = mysqli_query($conexao, "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')");
-  }
-
+  $login_status = isset($_GET['login']) ? $_GET['login'] : '';
+  $account_status = isset($_GET['account']) ? $_GET['account'] : '';
 ?>
 
 <!DOCTYPE html>
@@ -20,8 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIFAProServices</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/mobile-navbar.js"></script>
+    <script src="js/scripts.js" defer></script>
 </head>
-<body>
+<body data-account="<?php echo htmlspecialchars($account_status); ?>" data-login="<?php echo htmlspecialchars($login_status); ?>">
   <?php include 'header.php' ?>
     <div class="textoH1">
       <h1>Crie uma conta</h1>
@@ -42,7 +37,7 @@
                     </div>
 
             <div class="register">
-                        <form class="form-register" action="login.php" method="POST">
+                        <form class="form-register" action="config/testCadastro.php" method="POST">
                             <label for="chk" aria-hidden="true">Cadastro</label>
                             <input class="input-register" type="text" name="nome" placeholder="Nome do usuário" required>
                             <input class="input-register" type="email" name="email" placeholder="Email" required>
@@ -53,6 +48,5 @@
             </div>
     </div>
     <?php include 'footer.php'; ?>
-    <script src="js/mobile-navbar.js"></script>
   </body>
 </html>

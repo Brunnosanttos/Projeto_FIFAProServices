@@ -9,31 +9,26 @@
 
         //consulta ao db
         $sql = "SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'";
-
         $result = $conexao->query($sql);
 
-        if(mysqli_num_rows($result) < 1) 
-        {
-            //login falhou
-            unset($_SESSION['email']);
-            unset($_SESSION['pswd']);
-            header('Location: ../src/login.php');  
-            exit;
-        }
-        else
-        {
-            //login sucesso
+        if ($result && mysqli_num_rows($result) > 0) {
+            // Login bem-sucedido
             $_SESSION['email'] = $email;
             $_SESSION['pswd'] = $senha;
-            $_SESSION['login_sucess'] = true;
-            header('Location: ../learn.php?login=sucess');
+            $_SESSION['login_success'] = true;
+    
+            header('Location: ../learn.php?login=success');
+            exit;
+        } else {
+            // Login falhou
+            unset($_SESSION['email']);
+            unset($_SESSION['pswd']);
+            header('Location: ../login.php?login=error');
             exit;
         }
- 
-    }
-    else
-    {
-        header('Location: ../src/login.php');
+    } else {
+        // Redireciona para a página de login se os campos estiverem vazios
+        header('Location: ../login.php');
         exit;
     }
 ?>

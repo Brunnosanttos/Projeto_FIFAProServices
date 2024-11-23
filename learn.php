@@ -9,7 +9,8 @@
         exit;
     }
     $logado = $_SESSION['email'];
-
+    
+    $login_status = isset($_GET['login']) ? $_GET['login'] : '';
     
 ?>
 
@@ -24,7 +25,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/scripts.js" defer></script>
 </head>
-<body data-login="<?php echo $login_success ? 'success' : ''; ?>">
+<body data-login="<?php echo htmlspecialchars($login_status); ?>">
   <?php include 'header.php' ?>
     <div class="container">
         <div class="text">
