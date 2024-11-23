@@ -43,6 +43,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const loginStatus = body.getAttribute("data-login");
     const accountStatus = body.getAttribute("data-account");
 
+    // Função para redirecionar para login.php sem parâmetros na URL
+    function clearUrlParams() {
+        history.replaceState(null, document.title, window.location.pathname);
+    }
+
     // Exibe o Toast para login bem-sucedido
     if (loginStatus === "success") {
         const Toast = Swal.mixin({
@@ -61,6 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
             icon: "success",
             title: "Login efetuado com sucesso!",
         });
+
+        // Limpa os parâmetros da URL após exibir o Toast
+        clearUrlParams();
     }
 
     // Exibe o Toast para erro no login
@@ -81,6 +89,9 @@ document.addEventListener("DOMContentLoaded", function () {
             icon: "error",
             title: "Email ou senha inválidos!",
         });
+
+        // Limpa os parâmetros da URL após exibir o Toast
+        clearUrlParams();
     }
 
     // Exibe o Toast quando a conta for criada com sucesso
@@ -101,6 +112,9 @@ document.addEventListener("DOMContentLoaded", function () {
             icon: "success",
             title: "Conta criada com sucesso!",
         });
+
+        // Limpa os parâmetros da URL após exibir o Toast
+        clearUrlParams();
     }
 
     // Exibe o Toast para erro ao criar a conta
@@ -121,6 +135,9 @@ document.addEventListener("DOMContentLoaded", function () {
             icon: "error",
             title: "Erro ao criar a conta. Tente novamente!",
         });
+
+        // Limpa os parâmetros da URL após exibir o Toast
+        clearUrlParams();
     }
 
     // Exibe o Toast se o e-mail já existir
@@ -141,5 +158,8 @@ document.addEventListener("DOMContentLoaded", function () {
             icon: "error",
             title: "Este e-mail já está cadastrado!",
         });
+
+        // Limpa os parâmetros da URL após exibir o Toast
+        clearUrlParams();
     }
 });
