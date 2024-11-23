@@ -16,12 +16,14 @@
             unset($_SESSION['email']);
             unset($_SESSION['pswd']);
             header('Location: login.php');  
+            exit;
         }
         else
         {
             $_SESSION['email'] = $email;
             $_SESSION['pswd'] = $senha;
             header('Location: learn.php');
+            exit;
         }
  
     }
