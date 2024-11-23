@@ -1,10 +1,12 @@
 <?php
 
-    $dbHost = 'Localhost';
+    $dbHost = 'junction.proxy.rlwy.net';
     $dbUsername = 'root';
-    $dbPassword = '';
-    $dbName = 'form-fifa';
+    $dbPassword = 'hkojUBzSvbdttLOJCrSZazACRpNdMhTX';
+    $dbName = 'railway';
 
-    $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+    //mysql://root:hkojUBzSvbdttLOJCrSZazACRpNdMhTX@junction.proxy.rlwy.net:14560/railway
 
-?>
+    $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName, 14560);
+
+?>  
