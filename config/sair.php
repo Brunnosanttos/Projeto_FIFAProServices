@@ -1,8 +1,9 @@
 <?php
+session_start();
 
-    session_start();
-    unset($_SESSION['email']);
-    unset($_SESSION['pswd']);
-    header('Location: ../login.php');
+unset($_SESSION['email']);
+unset($_SESSION['pswd']);
 
+header('Location: ../login.php?logout=success');
+exit;
 ?>

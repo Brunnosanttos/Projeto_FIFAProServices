@@ -1,34 +1,43 @@
 <?php
-    session_start();
+session_start();
 
-    if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['pswd']))
-    {
-        include_once('config.php');
-        $email = $_POST['email'];
-        $senha = $_POST['pswd'];
+if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['pswd'])) {
+    include_once('config.php');
+    $email = mysqli_real_escape_string($conexao, $_POST['email']);
+    $senha = $_POST['pswd'];
 
-        //consulta ao db
-        $sql = "SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'";
-        $result = $conexao->query($sql);
+    // Consulta ao banco para buscar o usuário pelo e-mail
+    $sql = "SELECT * FROM usuarios WHERE email = ?";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-        if ($result && mysqli_num_rows($result) > 0) {
+    if ($result->num_rows > 0) {
+        // E-mail encontrado, agora verifica a senha
+        $usuario = $result->fetch_assoc();
+
+        if (password_verify($senha, $usuario['senha'])) {
             // Login bem-sucedido
-            $_SESSION['email'] = $email;
-            $_SESSION['pswd'] = $senha;
+            $_SESSION['email'] = $usuario['email'];
+            $_SESSION['nome'] = $usuario['nome'];
             $_SESSION['login_success'] = true;
-    
+
             header('Location: ../learn.php?login=success');
             exit;
         } else {
-            // Login falhou
-            unset($_SESSION['email']);
-            unset($_SESSION['pswd']);
+            // Senha incorreta
             header('Location: ../login.php?login=error');
             exit;
         }
     } else {
-        // Redireciona para a página de login se os campos estiverem vazios
-        header('Location: ../login.php');
+        // E-mail não encontrado
+        header('Location: ../login.php?login=error');
         exit;
     }
+} else {
+    // Campos não preenchidos
+    header('Location: ../login.php');
+    exit;
+}
 ?>

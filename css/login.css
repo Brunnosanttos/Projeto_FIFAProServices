@@ -205,6 +205,10 @@ header nav ul li a button:active::after {
     cursor: pointer;
     transition: .5s ease-in-out;
   }
+
+  .input-container {
+   width: 100%;
+  }
   
   .input-login {
     width: 100%;
@@ -215,6 +219,15 @@ header nav ul li a button:active::after {
     outline: none;
     border-radius: 4px;
   }
+
+  .toggle-password {
+    position: absolute;
+    top: 70%;
+    left: 150%;
+    cursor: pointer;
+    color: #333;
+    font-size: 18px;
+}
 
   .input-register {
     width: 70%;

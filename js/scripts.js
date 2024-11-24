@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const body = document.querySelector("body");
     const loginStatus = body.getAttribute("data-login");
     const accountStatus = body.getAttribute("data-account");
+    const logoutStatus = body.getAttribute("data-logout");
 
     // Função para redirecionar para login.php sem parâmetros na URL
     function clearUrlParams() {
@@ -162,4 +163,66 @@ document.addEventListener("DOMContentLoaded", function () {
         // Limpa os parâmetros da URL após exibir o Toast
         clearUrlParams();
     }
+    // Exibe o Toast para senha inválida
+    if (accountStatus === "invalid_password") {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            },
+        });
+
+        Toast.fire({
+            icon: "error",
+            title: "Senha inválida! Deve ter 8 caracteres, incluir maiúsculas, minúsculas e números.",
+        });
+
+        clearUrlParams();
+    }
+    if (logoutStatus === "success") {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            },
+        });
+
+        Toast.fire({
+            icon: "success",
+            title: "Você saiu com sucesso!",
+        });
+
+        clearUrlParams();
+    }
 });
+
+function validatePassword() {
+    const password = document.getElementById("password").value;
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+    if (!regex.test(password)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Senha inválida!',
+            text: 'A senha deve ter pelo menos 8 caracteres, incluir letras maiúsculas, minúsculas e números.',
+        });
+        return false; // Impede o envio do formulário
+    }
+    return true; // Permite o envio do formulário
+}
+
+function togglePassword(id) {
+    const passwordField = document.getElementById(id);
+    const type = passwordField.type === "password" ? "text" : "password";
+    passwordField.type = type;
+}

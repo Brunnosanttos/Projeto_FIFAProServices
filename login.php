@@ -2,6 +2,7 @@
 
   $login_status = isset($_GET['login']) ? $_GET['login'] : '';
   $account_status = isset($_GET['account']) ? $_GET['account'] : '';
+  $logout_status = isset($_GET['logout']) ? $_GET['logout'] : '';
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +17,7 @@
     <script src="js/mobile-navbar.js"></script>
     <script src="js/scripts.js" defer></script>
 </head>
-<body data-account="<?php echo htmlspecialchars($account_status); ?>" data-login="<?php echo htmlspecialchars($login_status); ?>">
+<body data-account="<?php echo htmlspecialchars($account_status); ?>" data-login="<?php echo htmlspecialchars($login_status); ?>" data-logout="<?php echo htmlspecialchars($logout_status); ?>">
   <?php include 'header.php' ?>
     <div class="textoH1">
       <h1>Crie uma conta</h1>
@@ -31,7 +32,7 @@
                         <form class="form-login" action="config/testLogin.php" method="POST">
                             <label for="chk" aria-hidden="true">Login</label>
                             <input class="input-login" type="email" name="email" placeholder="Email" required>
-                            <input class="input-login" type="password" name="pswd" placeholder="Senha" required>
+                            <input class="input-login" id="login-password" type="password" name="pswd" placeholder="Senha" required>
                             <button type="submit" name="submit" id="submit">Login</button>
                         </form>
                     </div>

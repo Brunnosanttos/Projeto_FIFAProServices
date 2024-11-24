@@ -14,7 +14,7 @@
                 <li><a href="login.php"><button type="button">Cadastro/Login</button></a></li>
             <?php endif; ?>
             <?php if(isset($_SESSION['email'])): ?>
-                <li><a href="config/sair.php"><button type="button">Sair</button></a></li>
+              <li><a href="config/sair.php?logout=success"><button type="button">Sair</button></a></li>
             <?php endif; ?>
         </ul>   
         </nav>
